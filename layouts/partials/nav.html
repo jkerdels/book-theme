@@ -1,0 +1,9 @@
+<div class="topnav">
+{{ $currentPage := . }}
+<ul>
+{{ range .Site.Menus.main }}
+	<li {{if eq .Name "Impressum" }} style="float:right"{{end}}><a class="{{if or (or ($currentPage.IsMenuCurrent `main` .) ($currentPage.HasMenuCurrent `main` .)) (eq $currentPage.Params.partofmenu .Name) }}active{{end}}" href="{{ .URL }}">{{- .Name -}}</a></li>	
+{{ end }} 
+</ul>
+</div>
+

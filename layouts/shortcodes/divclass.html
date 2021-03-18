@@ -1,0 +1,7 @@
+<div class="{{.Get 0}}">
+	{{if .Get 1}}
+	{{.Page.RenderString .Inner}}
+	{{else}}
+	{{.Inner}}
+	{{end}}
+</div>

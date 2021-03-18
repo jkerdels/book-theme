@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}main.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png">
+	<link rel="manifest" href="/icons/site.webmanifest">
+	<title>{{ .Site.Title }}</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<meta name="description" content="Free Web tutorials">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+{{ partial "header.html" . }}
+
+{{ partial "nav.html" . }}
+
+{{ block "main" . }}
+
+{{ end }}
+
+{{ block "footer" . }}
+
+{{ end }}
+
+</body>
+</html> 
+

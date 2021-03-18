@@ -1,0 +1,354 @@
+:root {
+  --blue:        #476881;
+  --mediumblue:  #354e61;
+  --darkblue:    #25343f;
+  --orange:      #ebd068;
+  --lightorange: #f8f0ce;
+  --darkorange:  #e6c546;
+}
+
+@font-face { font-family: CMUssm; src: url('/fonts/cmu.sans-serif-medium.ttf'); }
+@font-face { font-family: CMUbr; src: url('/fonts/cmu.bright-roman.ttf'); }
+@font-face { font-family: CMUbrsemi; src: url('/fonts/cmu.bright-semibold.ttf'); }
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: CMUbr, sans-serif;
+  font-size: 110%;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  overflow: auto;
+}
+
+header {
+	float: left;
+	background-color: var(--blue);
+	width: 100%;
+}
+
+header ul {
+  float: right;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--mediumblue);
+}
+
+header li {
+  float: right;
+}
+
+header li a {
+  font-family: CMUssm, sans-serif;
+  display: block;
+  color: var(--darkorange);
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header li a:hover {
+  background-color: var(--darkblue);
+}
+
+#logo {
+	float: left;
+	padding: 10px;
+	max-width: 300px;
+}
+
+/*navigation bar*/
+.topnav {
+	float: left;
+	width: 100%;
+	color: var(--lightorange);
+	background-color: var(--darkblue);
+}
+
+.topnav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav li {
+  float: left;
+}
+
+.topnav li a {
+  font-family: CMUssm, sans-serif;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.topnav li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.topnav .active {
+  color: var(--darkblue);
+  background-color: var(--darkorange);
+}
+
+.topnav .right {
+  float: right;
+}
+
+main {
+	max-width: 66%;
+	margin: auto;
+	clear: left;
+	padding-top: 10px;
+}
+
+main p {
+  text-align: justify;
+}
+
+main a {
+  text-decoration: none;
+  color: var(--blue);
+  font-family: CMUbrsemi, sans-serif;
+}
+
+div.dankmain {
+  max-width: 66%;
+  margin: auto;
+  clear: left;
+  padding-top: 10px;
+}
+
+div.dankmain h3 {
+  margin-top: 2.5em;
+  margin-bottom: 0em;
+}
+
+div.dankmain a {
+  text-decoration: none;
+  color: var(--blue);
+  font-family: CMUbrsemi, sans-serif;
+}
+
+div.buchmain {
+  font-family: CMUbr, sans-serif;
+  float: left;
+  max-width: 1000px;
+  padding-left: 25px;
+  padding-right: 25px;
+  counter-reset: images;
+}
+
+div.buchmain a {
+  text-decoration: none;
+  color: var(--blue);
+  font-family: CMUbrsemi, sans-serif;
+}
+
+div.buchmain p {
+  text-align: justify;
+}
+
+div.buchmain img {
+  max-width: 100%;
+  height:    auto;
+}
+
+div.buchnavprev {
+  float: left;
+  margin-top: 2em;
+}
+
+div.buchnavprev a {
+  font-family: CMUssm, sans-serif;
+  display: block;
+  color: white;
+  background-color: var(--blue);
+  text-align: center;
+  padding: 3px 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+div.buchnavprev a:hover {
+  background-color: #111;
+}
+
+div.buchnavnext {
+  float: right;
+  margin-top: 2em;
+}
+
+div.buchnavnext a {
+  font-family: CMUssm, sans-serif;
+  display: block;
+  color: white;
+  background-color: var(--blue);
+  text-align: center;
+  padding: 3px 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+div.buchnavnext a:hover {
+  background-color: var(--darkblue);
+}
+
+div.image1 img {
+  max-width: 75%;
+  height:    auto;
+}
+
+div.coverimg img {
+  float: right;
+  max-width: 25%;
+  height:    auto;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.4), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 25px;
+}
+
+div.introtitle h1 {
+  padding: 0;
+  margin-top: 25px;
+  margin-bottom: 0.25em;
+  text-align: center;
+  color: var(--darkblue);
+}
+
+div.introtitle h2 {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--blue);
+  text-align: center;
+}
+
+div.buchmain mark.imgidx {
+  background-color: unset;
+  color: unset;
+}
+
+div.buchmain mark.imgidx::before {
+  counter-increment: images;
+  content: counter(images);
+}
+
+div.buchmain mark.imgidxread {
+  background-color: unset;
+  color: unset;
+}
+
+div.buchmain mark.imgidxread::before {
+  content: counter(images);
+}
+
+div.buchmain mark.imgidxinc {
+  counter-increment: images;
+}
+
+aside {
+  float: left;
+  min-width: 250px;
+  padding-top:  15px;
+  padding-left: 0px;
+}  
+
+
+@media only screen and (max-width: 1250px) {
+
+aside {
+  float: left;
+  min-width: 250px;
+  padding-top:  15px;
+  padding-left: 0px;
+}  
+
+  div.buchmain {
+    float: unset;
+    max-width: unset;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+}
+
+@media only screen and (max-width: 650px) {
+
+  aside {
+    display: none;
+  }
+
+  div.buchmain {
+    float: left;
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+}
+
+aside ul {
+  list-style-type: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  padding: 0px;
+}
+
+aside li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  padding: 0px;
+}
+
+aside a {
+  font-family: CMUbrsemi, sans-serif;
+  text-decoration: none;
+  color: var(--darkblue);
+  padding: 3px 3px;
+}
+
+aside a:hover {
+  background-color: var(--blue);
+  color: var(--lightorange);
+}
+
+aside nav {
+  background-color: var(--lightorange);
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+div.bookadv p {
+  font-family: CMUbrsemi, sans-serif;
+  padding-bottom: 0em;
+  margin-bottom: 0em;
+}
+
+div.bookadv ul {
+  border-left-style: solid;
+  list-style-type: none;
+  padding-top: 0em;
+  padding-left: 1em;
+  margin-top: 0em;
+  background-color: var(--lightorange);
+  font-size: 0.875em;
+}
+
+div.bookadv li {
+  padding-top: 0.25em;
+  margin: 0;
+}

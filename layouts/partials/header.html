@@ -1,0 +1,12 @@
+<header>
+<img src="{{ .Site.BaseURL }}header_scaled.png" alt="Title" id="logo">
+{{ if .IsTranslated}}
+<ul>
+	{{ range .Translations }}
+	<li>
+		<a href="{{ .Permalink }}">{{ .Lang }}</a>
+	</li>
+	{{ end }}
+</ul>
+{{ end }}
+</header>

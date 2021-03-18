@@ -1,0 +1,32 @@
+{{ define "main" }}
+	<aside>
+		{{ $currentTitle := .Title}}
+		<ul class="toc">
+		{{ range .Parent.Pages }}
+		{{ if eq $currentTitle .Title }}
+		<li><a href="{{ .RelPermalink }}"><b>{{ .Title }}</b></a><br>
+		{{ .TableOfContents }}
+		</li>
+		{{else}}
+		<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+		{{end}}
+		{{end}}
+		</ul>
+	</aside>
+
+    <div class="buchmain">
+        {{.Content}}
+
+	    <div class="buchnavprev">
+	    	{{if ne .NextInSection nil}}
+	    	<a href="{{ .NextInSection.RelPermalink }}">← {{ .NextInSection.Title }}</a>
+	    	{{end}}
+	    </div>
+	    <div class="buchnavnext">
+	    	{{if ne .PrevInSection nil}}
+	    	<a href="{{ .PrevInSection.RelPermalink }}">{{ .PrevInSection.Title }} →</a>
+	    	{{end}}
+	    </div>
+
+    </div>
+{{ end }}

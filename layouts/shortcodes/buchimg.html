@@ -1,0 +1,4 @@
+<figure>
+	<img src="{{.Get 0}}"/>
+	<figcaption>{{if eq .Page.Lang "de"}}Abbildung{{else}}Figure{{end}} {{.Page.Params.chapnum}}.{{if .Get 2}}<mark class="imgidxread"></mark>{{else}}<mark class="imgidx"></mark>{{end}}: {{.Page.RenderString (.Get 1)}}</figcaption>
+</figure>
